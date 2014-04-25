@@ -44,6 +44,8 @@ namespace pc_system
             if (Worker.validate(textBox1.Text, textBox3.Text))
             {
                 MessageBox.Show("登陆成功");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             return;
 

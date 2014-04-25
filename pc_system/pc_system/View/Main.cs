@@ -13,7 +13,14 @@ namespace pc_system.View
     {
         public Main()
         {
-            InitializeComponent();
+            // 显示登陆窗
+            Form1 formLogin = new Form1();
+            if (formLogin.ShowDialog() != DialogResult.OK)  //不成功则退出
+            {
+                Environment.Exit(Environment.ExitCode);
+                return;
+            }
+            InitializeComponent();      //构造主窗体
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
