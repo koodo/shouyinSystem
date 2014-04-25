@@ -118,22 +118,40 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="交接班" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\交接班.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="交接班f" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\交接班f.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="商品编辑" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\商品编辑.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="交接班h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\交接班h.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="新增会员" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\新增会员.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="商品编辑f" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\商品编辑f.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="系统设置" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\系统设置.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="商品编辑h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\商品编辑h.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="订货" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\订货.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="新增会员f" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\新增会员f.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="销售单据" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\销售单据.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="新增会员h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\新增会员h.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="系统设置f" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\系统设置f.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="系统设置h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\系统设置h.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="订货f" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\订货f.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="订货h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\订货h.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="销售单据f" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\销售单据f.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="销售单据h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\销售单据h.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

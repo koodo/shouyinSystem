@@ -63,9 +63,9 @@ namespace pc_system {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 交接班 {
+        internal static System.Drawing.Bitmap 交接班f {
             get {
-                object obj = ResourceManager.GetObject("交接班", resourceCulture);
+                object obj = ResourceManager.GetObject("交接班f", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace pc_system {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 商品编辑 {
+        internal static System.Drawing.Bitmap 交接班h {
             get {
-                object obj = ResourceManager.GetObject("商品编辑", resourceCulture);
+                object obj = ResourceManager.GetObject("交接班h", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace pc_system {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 新增会员 {
+        internal static System.Drawing.Bitmap 商品编辑f {
             get {
-                object obj = ResourceManager.GetObject("新增会员", resourceCulture);
+                object obj = ResourceManager.GetObject("商品编辑f", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace pc_system {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 系统设置 {
+        internal static System.Drawing.Bitmap 商品编辑h {
             get {
-                object obj = ResourceManager.GetObject("系统设置", resourceCulture);
+                object obj = ResourceManager.GetObject("商品编辑h", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace pc_system {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 订货 {
+        internal static System.Drawing.Bitmap 新增会员f {
             get {
-                object obj = ResourceManager.GetObject("订货", resourceCulture);
+                object obj = ResourceManager.GetObject("新增会员f", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,69 @@ namespace pc_system {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 销售单据 {
+        internal static System.Drawing.Bitmap 新增会员h {
             get {
-                object obj = ResourceManager.GetObject("销售单据", resourceCulture);
+                object obj = ResourceManager.GetObject("新增会员h", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 系统设置f {
+            get {
+                object obj = ResourceManager.GetObject("系统设置f", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 系统设置h {
+            get {
+                object obj = ResourceManager.GetObject("系统设置h", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 订货f {
+            get {
+                object obj = ResourceManager.GetObject("订货f", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 订货h {
+            get {
+                object obj = ResourceManager.GetObject("订货h", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 销售单据f {
+            get {
+                object obj = ResourceManager.GetObject("销售单据f", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 销售单据h {
+            get {
+                object obj = ResourceManager.GetObject("销售单据h", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -143,25 +143,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\订货.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\交接班.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\商品编辑.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\系统设置.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\销售单据.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\新增会员.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\abc.jpg" />
+    <None Include="Resources\新增会员h.jpg" />
+    <None Include="Resources\销售单据h.jpg" />
+    <None Include="Resources\销售单据f.jpg" />
+    <None Include="Resources\系统设置h.jpg" />
+    <None Include="Resources\系统设置f.jpg" />
+    <None Include="Resources\商品编辑h.jpg" />
+    <None Include="Resources\商品编辑f.jpg" />
+    <None Include="Resources\交接班h.jpg" />
+    <None Include="Resources\交接班f.jpg" />
+    <None Include="Resources\订货h.jpg" />
+    <None Include="Resources\订货f.jpg" />
+    <None Include="Resources\新增会员f.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
