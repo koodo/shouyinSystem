@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using pc_system.Model;
 
 namespace pc_system
 {
@@ -40,6 +41,11 @@ namespace pc_system
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (Worker.validate(textBox1.Text, textBox3.Text))
+            {
+                MessageBox.Show("登陆成功");
+            }
+            return;
 
         }
 

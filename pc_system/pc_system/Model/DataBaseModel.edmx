@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityType Name="clients">
+          <Key>
+            <PropertyRef Name="client_id" />
+          </Key>
+          <Property Name="client_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="client_password" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="client_type" Type="varchar" MaxLength="20" />
+          <Property Name="client_name" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="client_sex" Type="enum" />
+          <Property Name="client_phone" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="client_wechat" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="client_date_enroll" Type="date" Nullable="false" />
+          <Property Name="client_birth" Type="date" />
+          <Property Name="client_address" Type="varchar" MaxLength="60" />
+          <Property Name="client_deposit" Type="float" Nullable="false" />
+          <Property Name="client_integral" Type="int" Nullable="false" />
+          <Property Name="client_introducer" Type="int" />
+          <Property Name="client_remark" Type="varchar" MaxLength="40" />
+          <Property Name="client_record" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="orders">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="int" Nullable="false" />
+          <Property Name="product_id" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="product_price" Type="float" Nullable="false" />
+          <Property Name="product_count" Type="smallint" Nullable="false" />
+          <Property Name="product_pricesale" Type="float" Nullable="false" />
+          <Property Name="client_id" Type="int" />
+        </EntityType>
+        <EntityType Name="product_get">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="product_price" Type="float" Nullable="false" />
+          <Property Name="product_count" Type="smallint" Nullable="false" />
+          <Property Name="product_date_enroll" Type="date" Nullable="false" />
+          <Property Name="product_batch" Type="int" Nullable="false" />
+          <Property Name="store_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="product_info">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="product_code" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="product_server" Type="varchar" MaxLength="60" />
+          <Property Name="product_type" Type="varchar" MaxLength="40" />
+          <Property Name="product_name" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="product_color" Type="varchar" MaxLength="40" />
+          <Property Name="product_size" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="product_kucun">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="product_count" Type="smallint" Nullable="false" />
+          <Property Name="product_batch" Type="int" Nullable="false" />
+          <Property Name="product_price" Type="float" Nullable="false" />
+          <Property Name="store_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="product_onsale">
+          <Key>
+            <PropertyRef Name="product_id" />
+            <PropertyRef Name="store_id" />
+          </Key>
+          <Property Name="product_id" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="product_count" Type="smallint" Nullable="false" />
+          <Property Name="store_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="stores">
+          <Key>
+            <PropertyRef Name="store_id" />
+          </Key>
+          <Property Name="store_id" Type="int" Nullable="false" />
+          <Property Name="store_name" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="manager_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="traderecord">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="int" Nullable="false" />
+          <Property Name="client_id" Type="int" />
+          <Property Name="worker_id" Type="int" />
+          <Property Name="order_time" Type="datetime" Precision="0" />
+          <Property Name="store_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="workers">
+          <Key>
+            <PropertyRef Name="worker_id" />
+          </Key>
+          <Property Name="worker_id" Type="int" Nullable="false" />
+          <Property Name="worker_password" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="worker_name" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="store_id" Type="int" Nullable="false" />
+          <Property Name="worker_phone" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="worker_join" Type="date" Nullable="false" />
+          <Property Name="worker_IDnum" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="worker_position" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="worker_sex" Type="enum" Nullable="false" />
+          <Property Name="worker_pay" Type="float" />
+        </EntityType>
+        <EntityContainer Name="dbModelStoreContainer">
+          <EntitySet Name="clients" EntityType="Self.clients" Schema="db" store:Type="Tables" />
+          <EntitySet Name="orders" EntityType="Self.orders" Schema="db" store:Type="Tables" />
+          <EntitySet Name="product_get" EntityType="Self.product_get" Schema="db" store:Type="Tables" />
+          <EntitySet Name="product_info" EntityType="Self.product_info" Schema="db" store:Type="Tables" />
+          <EntitySet Name="product_kucun" EntityType="Self.product_kucun" Schema="db" store:Type="Tables" />
+          <EntitySet Name="product_onsale" EntityType="Self.product_onsale" Schema="db" store:Type="Tables" />
+          <EntitySet Name="stores" EntityType="Self.stores" Schema="db" store:Type="Tables" />
+          <EntitySet Name="traderecord" EntityType="Self.traderecord" Schema="db" store:Type="Tables" />
+          <EntitySet Name="workers" EntityType="Self.workers" Schema="db" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityType Name="clients">
+          <Key>
+            <PropertyRef Name="client_id" />
+          </Key>
+          <Property Name="client_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="client_password" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="client_type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="client_name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="client_sex" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="client_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="client_wechat" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="client_date_enroll" Type="DateTime" Nullable="false" />
+          <Property Name="client_birth" Type="DateTime" />
+          <Property Name="client_address" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="client_deposit" Type="Single" Nullable="false" />
+          <Property Name="client_integral" Type="Int16" Nullable="false" />
+          <Property Name="client_introducer" Type="Int32" />
+          <Property Name="client_remark" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="client_record" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="orders">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="Int32" Nullable="false" />
+          <Property Name="product_id" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="product_price" Type="Single" Nullable="false" />
+          <Property Name="product_count" Type="Int16" Nullable="false" />
+          <Property Name="product_pricesale" Type="Single" Nullable="false" />
+          <Property Name="client_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="product_get">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="product_price" Type="Single" Nullable="false" />
+          <Property Name="product_count" Type="Int16" Nullable="false" />
+          <Property Name="product_date_enroll" Type="DateTime" Nullable="false" />
+          <Property Name="product_batch" Type="Int32" Nullable="false" />
+          <Property Name="store_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="product_info">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="product_code" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="product_server" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="product_type" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="product_name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="product_color" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="product_size" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="product_kucun">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="product_count" Type="Int16" Nullable="false" />
+          <Property Name="product_batch" Type="Int32" Nullable="false" />
+          <Property Name="product_price" Type="Single" Nullable="false" />
+          <Property Name="store_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="product_onsale">
+          <Key>
+            <PropertyRef Name="product_id" />
+            <PropertyRef Name="store_id" />
+          </Key>
+          <Property Name="product_id" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="product_count" Type="Int16" Nullable="false" />
+          <Property Name="store_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="stores">
+          <Key>
+            <PropertyRef Name="store_id" />
+          </Key>
+          <Property Name="store_id" Type="Int32" Nullable="false" />
+          <Property Name="store_name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="manager_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="traderecord">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="Int32" Nullable="false" />
+          <Property Name="client_id" Type="Int32" />
+          <Property Name="worker_id" Type="Int32" />
+          <Property Name="order_time" Type="DateTime" />
+          <Property Name="store_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="workers">
+          <Key>
+            <PropertyRef Name="worker_id" />
+          </Key>
+          <Property Name="worker_id" Type="Int32" Nullable="false" />
+          <Property Name="worker_password" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="worker_name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="store_id" Type="Int32" Nullable="false" />
+          <Property Name="worker_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="worker_join" Type="DateTime" Nullable="false" />
+          <Property Name="worker_IDnum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="worker_position" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="worker_sex" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="worker_pay" Type="Single" />
+        </EntityType>
+        <EntityContainer Name="dbEntities">
+          <EntitySet Name="clients" EntityType="Self.clients" />
+          <EntitySet Name="orders" EntityType="Self.orders" />
+          <EntitySet Name="product_get" EntityType="Self.product_get" />
+          <EntitySet Name="product_info" EntityType="Self.product_info" />
+          <EntitySet Name="product_kucun" EntityType="Self.product_kucun" />
+          <EntitySet Name="product_onsale" EntityType="Self.product_onsale" />
+          <EntitySet Name="stores" EntityType="Self.stores" />
+          <EntitySet Name="traderecord" EntityType="Self.traderecord" />
+          <EntitySet Name="workers" EntityType="Self.workers" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="dbModelStoreContainer" CdmEntityContainer="dbEntities">
+          <EntitySetMapping Name="clients">
+            <EntityTypeMapping TypeName="dbModel.clients">
+              <MappingFragment StoreEntitySet="clients">
+                <ScalarProperty Name="client_id" ColumnName="client_id" />
+                <ScalarProperty Name="client_password" ColumnName="client_password" />
+                <ScalarProperty Name="client_type" ColumnName="client_type" />
+                <ScalarProperty Name="client_name" ColumnName="client_name" />
+                <ScalarProperty Name="client_sex" ColumnName="client_sex" />
+                <ScalarProperty Name="client_phone" ColumnName="client_phone" />
+                <ScalarProperty Name="client_wechat" ColumnName="client_wechat" />
+                <ScalarProperty Name="client_date_enroll" ColumnName="client_date_enroll" />
+                <ScalarProperty Name="client_birth" ColumnName="client_birth" />
+                <ScalarProperty Name="client_address" ColumnName="client_address" />
+                <ScalarProperty Name="client_deposit" ColumnName="client_deposit" />
+                <ScalarProperty Name="client_integral" ColumnName="client_integral" />
+                <ScalarProperty Name="client_introducer" ColumnName="client_introducer" />
+                <ScalarProperty Name="client_remark" ColumnName="client_remark" />
+                <ScalarProperty Name="client_record" ColumnName="client_record" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orders">
+            <EntityTypeMapping TypeName="dbModel.orders">
+              <MappingFragment StoreEntitySet="orders">
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="product_price" ColumnName="product_price" />
+                <ScalarProperty Name="product_count" ColumnName="product_count" />
+                <ScalarProperty Name="product_pricesale" ColumnName="product_pricesale" />
+                <ScalarProperty Name="client_id" ColumnName="client_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="product_get">
+            <EntityTypeMapping TypeName="dbModel.product_get">
+              <MappingFragment StoreEntitySet="product_get">
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="product_price" ColumnName="product_price" />
+                <ScalarProperty Name="product_count" ColumnName="product_count" />
+                <ScalarProperty Name="product_date_enroll" ColumnName="product_date_enroll" />
+                <ScalarProperty Name="product_batch" ColumnName="product_batch" />
+                <ScalarProperty Name="store_id" ColumnName="store_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="product_info">
+            <EntityTypeMapping TypeName="dbModel.product_info">
+              <MappingFragment StoreEntitySet="product_info">
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="product_code" ColumnName="product_code" />
+                <ScalarProperty Name="product_server" ColumnName="product_server" />
+                <ScalarProperty Name="product_type" ColumnName="product_type" />
+                <ScalarProperty Name="product_name" ColumnName="product_name" />
+                <ScalarProperty Name="product_color" ColumnName="product_color" />
+                <ScalarProperty Name="product_size" ColumnName="product_size" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="product_kucun">
+            <EntityTypeMapping TypeName="dbModel.product_kucun">
+              <MappingFragment StoreEntitySet="product_kucun">
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="product_count" ColumnName="product_count" />
+                <ScalarProperty Name="product_batch" ColumnName="product_batch" />
+                <ScalarProperty Name="product_price" ColumnName="product_price" />
+                <ScalarProperty Name="store_id" ColumnName="store_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="product_onsale">
+            <EntityTypeMapping TypeName="dbModel.product_onsale">
+              <MappingFragment StoreEntitySet="product_onsale">
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="product_count" ColumnName="product_count" />
+                <ScalarProperty Name="store_id" ColumnName="store_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stores">
+            <EntityTypeMapping TypeName="dbModel.stores">
+              <MappingFragment StoreEntitySet="stores">
+                <ScalarProperty Name="store_id" ColumnName="store_id" />
+                <ScalarProperty Name="store_name" ColumnName="store_name" />
+                <ScalarProperty Name="manager_id" ColumnName="manager_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="traderecord">
+            <EntityTypeMapping TypeName="dbModel.traderecord">
+              <MappingFragment StoreEntitySet="traderecord">
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="client_id" ColumnName="client_id" />
+                <ScalarProperty Name="worker_id" ColumnName="worker_id" />
+                <ScalarProperty Name="order_time" ColumnName="order_time" />
+                <ScalarProperty Name="store_id" ColumnName="store_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="workers">
+            <EntityTypeMapping TypeName="dbModel.workers">
+              <MappingFragment StoreEntitySet="workers">
+                <ScalarProperty Name="worker_id" ColumnName="worker_id" />
+                <ScalarProperty Name="worker_password" ColumnName="worker_password" />
+                <ScalarProperty Name="worker_name" ColumnName="worker_name" />
+                <ScalarProperty Name="store_id" ColumnName="store_id" />
+                <ScalarProperty Name="worker_phone" ColumnName="worker_phone" />
+                <ScalarProperty Name="worker_join" ColumnName="worker_join" />
+                <ScalarProperty Name="worker_IDnum" ColumnName="worker_IDnum" />
+                <ScalarProperty Name="worker_position" ColumnName="worker_position" />
+                <ScalarProperty Name="worker_sex" ColumnName="worker_sex" />
+                <ScalarProperty Name="worker_pay" ColumnName="worker_pay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
